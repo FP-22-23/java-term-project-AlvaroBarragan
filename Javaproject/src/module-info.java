@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author Álvaro
- *
- */
-module Javaproject {
-}
