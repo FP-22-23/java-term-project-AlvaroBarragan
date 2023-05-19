@@ -1,0 +1,26 @@
+The object game has the following properties:
+- a game id (int)
+- a league which is an enum
+- if it has been a playoffs match
+- the date and time
+-the patch which is a double
+-the name of the first team
+-the name of the second (both strings)
+-A list of the characters banned by the first team
+- a boolean if the first team has won
+-A list of the characters banned by the second team
+-and 10 players which are object of and auxiliary type that has the properties name, damage per minute,position(another enum) and the character played.
+Then, in the class game, we have the function .equals what compares the ids of two matches to see if they are equals
+Also, a compareto to see which match has happened before (comparing the patch)
+Then, methods to add champions to the ban list with the restriction of a maximum of five elements.
+In addition, the getters and setters and a derived property that shows if the team 2 has won (it is derived from the bool of the first team because only one can win)
+Then two constructors, one to show in a string the complete information of a match and other to show a resume
+Finally, the other restriction is that every game has to be played between the patch 10 and 11 (what is a season in the real world)
+Delivery 2
+After creating the factory with the methods asked for and also the container type with all the requirements we have created the following methods in the conntainer type:
+The fisrt one "exists" returns false if there is a list of banned characters bigger than 6
+the second one "total dmg" calculates the total damage dealt per minute by a team
+the third one "select league" returns all the games played on a certain league
+the fourth one"champof player" return a set of all champions played by a player
+Finally, the last one "freqof match" return a map with the number of games played in each patch.
+IMPORTANT: I have had problems with the factory and the localdatetime so Icouldnt have test the methods in the testbench
