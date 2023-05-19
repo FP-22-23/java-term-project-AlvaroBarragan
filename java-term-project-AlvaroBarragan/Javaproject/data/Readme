@@ -84,4 +84,7 @@ Type Player(Auxiliary):
     "leaguesin patch" retruns a sorted set of the leagues played in a given patch
     "bestgameofsup" returns a Map the name of each support of the first team as the key with their maximum damage on a game during the season as the value
     "worstmatchofadc" returns the worst game of a given adc (that has played in team1) 
-    "
+    "firstmatches" returns a Map that has as keys the different leaues and as value a list of the n(n is given) first matches during the season
+    "lastgame" returns an entry that has the id as value and as key the last game played (appliying max to the dates)
+    
+   
