@@ -1,4 +1,11 @@
-The object game has the following properties:
+Proyect of the second semester(java)
+Structure of the folders of the project:
+/data: conatins the csv file and the readme
+/src: contains 3 packages:
+  auxiliary with the class player and position
+  test with the test 
+  types with the checkers,factory,container andthe class game 
+Structure of the dataset
 - a game id (int)
 - a league which is an enum
 - if it has been a playoffs match
@@ -9,18 +16,72 @@ The object game has the following properties:
 -A list of the characters banned by the first team
 - a boolean if the first team has won
 -A list of the characters banned by the second team
--and 10 players which are object of and auxiliary type that has the properties name, damage per minute,position(another enum) and the character played.
-Then, in the class game, we have the function .equals what compares the ids of two matches to see if they are equals
-Also, a compareto to see which match has happened before (comparing the patch)
-Then, methods to add champions to the ban list with the restriction of a maximum of five elements.
-In addition, the getters and setters and a derived property that shows if the team 2 has won (it is derived from the bool of the first team because only one can win)
-Then two constructors, one to show in a string the complete information of a match and other to show a resume
-Finally, the other restriction is that every game has to be played between the patch 10 and 11 (what is a season in the real world)
-Delivery 2
-After creating the factory with the methods asked for and also the container type with all the requirements we have created the following methods in the conntainer type:
-The fisrt one "exists" returns false if there is a list of banned characters bigger than 6
-the second one "total dmg" calculates the total damage dealt per minute by a team
-the third one "select league" returns all the games played on a certain league
-the fourth one"champof player" return a set of all champions played by a player
-Finally, the last one "freqof match" return a map with the number of games played in each patch.
-IMPORTANT: I have had problems with the factory and the localdatetime so Icouldnt have test the methods in the testbench
+-and 10 players of type player
+Implemented types:
+Type game :
+It has the following properties:
+- a game id (int)
+- a league which is an enum
+- if it has been a playoffs match
+- the date and time
+-the patch which is a double
+-the name of the first team
+-the name of the second (both strings)
+-A list of the characters banned by the first team
+- a boolean if the first team has won
+-A list of the characters banned by the second team
+-and 10 players of type player
+Constructors:
+C1: Creates a game with all the baasic properties
+C2: Shows a resume of a game
+Restrictions:
+The patch of the game has to be between 10 and 11
+The size of the  list of ban as maximum can be five
+The equiality criteria is that if two id of game are equal; they are equal
+The compareto()method see which match has happened before(according to the pacth)
+The derived property that shows if the team 2 has won (it is derived from the bool of the first team because only one can win)
+Also; the getters and setters
+Type Player(Auxiliary):
+  name(String),
+  damage(Double),
+  position(enum) 
+  character played(String).
+  C1 Create a Player with all its basic properties
+  Also; the getters and setters
+ Type League(Auxiliary: Enum)
+  Can take the values of:
+  KeSPA,BRCC,CBLOL,CK,EM,LCK,LCS,LCL,LDL,LEC,LFL,LJL,LLA,LPL,MSC,OCS,OPL,PCS,Riot,TCL,TRA,VCS
+ Type Position(Auxiliary; Enum)
+  Can take the values of:
+  sup,bot,mid,top,jng
+ Delivery 2
+ Factory
+ Creates a object game according to the data provided by the csv 
+ games (Container type):
+ the properties are:
+ games: a list of game
+ Constructors:
+  C1 : a constructor which creates an empty object games 
+  C2: A constructor that creates a object games with the object game contained in a stream
+  Equality criteria:
+  Two games are equal if all the objects they contain are equal
+  Functions to add (one game or a list of game) and subtract a game from an object games 
+  
+  Other functions:
+   "getNumberGames" returns the total numbers of games played on the season
+   "exists" returns false if there is a list of banned characters bigger than 6
+    - existsstr do the same but using streams (Delivery3)
+   "total dmg" calculates the total damage done in that season
+    - totaldmgstr do the same but using streams (Delivery3)
+   "select league" returns all the games played on a given certain league
+    -selectleaguestr do the same but using streams (Delivery3)
+   "champof player" return a set of all champions played by a given player
+   "freqof match" return a map with the number of games played in each patch.
+    -freqofmatchstr do the same using streams (Delivery3)
+    
+   Delivery3
+   Adding functions  to the container type(each one has to be done with streams):
+    "leaguesin patch" retruns a sorted set of the leagues played in a given patch
+    "bestgameofsup" returns a Map the name of each support of the first team as the key with their maximum damage on a game during the season as the value
+    "worstmatchofadc" returns the worst game of a given adc (that has played in team1) 
+    "
